@@ -1,0 +1,158 @@
+.table-wrapper {
+    margin-top: 130px;
+    margin-bottom: 130px;
+}
+
+.table-container {
+    width: 90%;
+    margin: 0 auto;
+    background: linear-gradient(to bottom right, rgba(116, 114, 114, 0.7) 0%, rgba(78, 78, 78, 0.7) 100%);
+    border-radius: 12px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    font-weight: 600;
+    font-size: 28px;
+    color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: left;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+th,
+td {
+    padding: 12px;
+}
+
+th {
+    background-color: rgba(66, 66, 66, 0.8);
+    font-weight: bold;
+    color: #fff;
+}
+
+tr:hover {
+    color: #fffdc5;
+    background-color: rgba(51, 51, 51, 0.8);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button {
+    background-color: rgba(0, 123, 255, 0.9);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0 0 0 9px;
+}
+
+button:hover {
+    background-color: rgba(0, 86, 179, 0.9);
+}
+
+.go-back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #6c63ff;
+    color: transparent;
+    border: none;
+    border-radius: 50%;
+    font-size: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s;
+    background-image: url("./left-arrow.png");
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: 13px center;
+}
+
+.go-back-button:hover {
+    background-color: #5a54e3;
+}
+
+.details-button {
+    background-color: #6c63ff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.details-button:hover {
+    background-color: #5a54e3;
+}
+
+.unsuscribe-button {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.unsuscribe-button:hover {
+    background-color: #ff4d4d;
+}
+
+.suscribe-button {
+    background-color: #4db8ff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.suscribe-button:hover {
+    background-color: #33a3ff;
+}
+
+.cancel-button {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-left: 10px;
+}
+
+.cancel-button:hover {
+    background-color: #ff4d4d;
+}
+
+.scrollable-container {
+    max-height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 10px;
+}
+
+.scrollable-container::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollable-container {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}

@@ -1,0 +1,87 @@
+/* Modal background overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+/* Modal content container */
+.modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    min-width: 300px;
+    max-width: 600px;
+    position: relative;
+}
+
+/* Keyframes for a more visible subtle pulsing */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.15); /* aumenta un 15% en tamaño */
+        opacity: 0.8; /* baja ligeramente la opacidad */
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Close button styling with a noticeable but soft pulse */
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 2rem; /* más grande para mejor percepción */
+    cursor: pointer;
+    animation: pulse 1.8s ease-in-out infinite;
+    color: #333; /* color de texto */
+    transition: color 0.3s;
+}
+
+/* Cambio de color al pasar el mouse */
+.modal-close:hover {
+    color: #ff4d4d; /* Rojo suave al pasar el mouse */
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.profile-picture {
+    width: 150px; /* Fija el tamaño de la imagen */
+    height: 150px; /* Fija el tamaño de la imagen */
+    border-radius: 50%; /* Hace que la imagen tenga forma circular */
+    object-fit: cover; /* Asegura que la imagen no se distorsione */
+    margin-bottom: 20px; /* Separación entre la imagen y el contenido */
+}
+
+.employee-info {
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.section-title {
+    font-weight: bold;
+    color: #0056b3;
+    margin-right: 5px;
+}
