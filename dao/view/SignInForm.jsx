@@ -68,7 +68,7 @@ export default function SignInForm({ onLoginSuccess }) {
             ) : (
                 <ScrollView contentContainerStyle={styles.scrollContent}>
                     <View>
-                        <Text style={styles.welcomeText}>Sign You</Text>
+                        <Text style={styles.welcomeText}>Sign In</Text>
                         {step === 1 && <OneLineInput onPlaceholder="Type Email" onType="text" onResult={handleResult} />}
                         {step === 2 && <OneLineInput onPlaceholder="Type Password" onType="password" onResult={handleResult} />}
                         {error && <Text style={styles.errorText}>{error}</Text>}

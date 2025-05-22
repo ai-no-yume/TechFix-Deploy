@@ -68,13 +68,8 @@ export default function Letters({ onBack, initialStatusFilter = 'All' }) {
     const downloadFile = async (file) => {
         try {
             if (Platform.OS === 'web') {
-                const link = document.createElement('a');
-                link.href = file.url;
-                link.download = file.name;
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-                toast.success(`Archivo ${file.name} descargado.`, {
+                window.open(file.url, '_blank'); // Abrir en nueva pestaña
+                toast.success(`Archivo ${file.name} abierto en nueva pestaña.`, {
                     position: 'top-right',
                     autoClose: 3000,
                 });
@@ -89,7 +84,7 @@ export default function Letters({ onBack, initialStatusFilter = 'All' }) {
         } catch (error) {
             console.error('Error descargando/abriendo el archivo:', error);
             if (Platform.OS === 'web') {
-                toast.error('No se pudo descargar el archivo. Intenta de nuevo.', {
+                toast.error('No se pudo abrir el archivo en nueva pestaña. Intenta de nuevo.', {
                     position: 'top-right',
                     autoClose: 3000,
                 });

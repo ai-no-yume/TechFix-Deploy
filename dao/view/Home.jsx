@@ -15,28 +15,22 @@ export default function Home() {
     const commandInterpreter = (input) => {
         const normalizedInput = input.toLowerCase().trim();
         const intentions = {
-            register: [/^register$/, /^sign up$/, /^add$/, /^new$/, /^registrar$/, /^ingresar$/, /^agregar$/, /^nuevo$/, /^inscribir$/, /^incorporar$/],
-            allEmployees: [/^all employees$/, /^todos los empleados$/, /^todo el personal$/],
-            activeEmployees: [/^active employees$/, /^show active employees$/, /^empleados activos$/, /^personal activo$/],
-            inactiveEmployees: [/^inactive employees$/, /^show inactive employees$/, /^empleados inactivos$/, /^personal inactivo$/],
-            help: [/^help$/, /^help me$/, /^need help$/, /^-h$/, /^--h$/, /^-help$/, /^--help$/, /^guide$/, /^instructions$/, /^ayuda$/, /^ayudame$/, /^necesito ayuda$/, /^guia$/, /^manual$/, /^instrucciones$/],
-            termination: [/^termination chart$/, /^termination summary$/, /^grafico de terminaciones$/, /^grafico de despidos$/, /^grafico de bajas$/, /^resumen de terminaciones$/, /^resumen de despidos$/, /^resumen de bajas$/],
-            allLetters: [/^all letters$/, /^all documents$/, /^all files$/, /^todas las cartas$/, /^todos los documentos$/, /^todos los archivo$/],
-            hiringLetters: [/^hiring letters$/, /^hiring documents$/, /^hiring files$/, /^cartas de contratacion$/, /^documentos de contratacion$/, /^archivos de contratacion$/],
-            dismissalLetters: [/^dismissal letters$/, /^dismissal documents$/, /^dismissal files$/, /^cartas de despido$/, /^documentos de despido$/, /^archivos de despido$/],
-            resignationLetters: [/^resignation letters$/, /^resignation documents$/, /^resignation files$/, /^cartas de renuncia$/, /^documentos de renuncia$/, /^archivos de renuncia$/]
+            register: [/.*\bregister\b.*/, /.*\bsign up\b.*/, /.*\badd\b.*/, /.*\bnew\b.*/, /.*\bregistrar\b.*/, /.*\bingresar\b.*/, /.*\bagregar\b.*/, /.*\bnuevo\b.*/, /.*\binscribir\b.*/, /.*\bincorporar\b.*/],
+            allEmployees: [/.*\ball employees\b.*/, /.*\btodos los empleados\b.*/, /.*\btodo el personal\b.*/],
+            activeEmployees: [/.*\bactive employees\b.*/, /.*\bempleados activos\b.*/, /.*\bpersonal activo\b.*/],
+            inactiveEmployees: [/.*\binactive employees\b.*/, /.*\bempleados inactivos\b.*/, /.*\bpersonal inactivo\b.*/],
+            help: [/.*\bhelp\b.*/, /.*\bhelp me\b.*/, /.*\bneed help\b.*/, /.*-h.*/, /.*--h.*/, /.*-help.*/, /.*--help.*/, /.*\bguide\b.*/, /.*\binstructions\b.*/, /.*\bayuda\b.*/, /.*\bayudame\b.*/, /.*\bnecesito ayuda\b.*/, /.*\bguia\b.*/, /.*\bmanual\b.*/, /.*\binstrucciones\b.*/],
+            termination: [/.*\btermination chart\b.*/, /.*\btermination summary\b.*/, /.*\bgrafico de terminaciones\b.*/, /.*\bgrafico de despidos\b.*/, /.*\bgrafico de bajas\b.*/, /.*\bresumen de terminaciones\b.*/, /.*\bresumen de despidos\b.*/, /.*\bresumen de bajas\b.*/],
+            allLetters: [/.*\ball letters\b.*/, /.*\ball documents\b.*/, /.*\ball files\b.*/, /.*\btodas las cartas\b.*/, /.*\btodos los documentos\b.*/, /.*\btodos los archivos\b.*/],
+            hiringLetters: [/.*\bhiring letters\b.*/, /.*\bhiring documents\b.*/, /.*\bhiring files\b.*/, /.*\bcartas de contratacion\b.*/, /.*\bdocumentos de contratacion\b.*/, /.*\barchivos de contratacion\b.*/],
+            dismissalLetters: [/.*\bdismissal letters\b.*/, /.*\bdismissal documents\b.*/, /.*\bdismissal files\b.*/, /.*\bcartas de despido\b.*/, /.*\bdocumentos de despido\b.*/, /.*\barchivos de despido\b.*/],
+            resignationLetters: [/.*\bresignation letters\b.*/, /.*\bresignation documents\b.*/, /.*\bresignation files\b.*/, /.*\bcartas de renuncia\b.*/, /.*\bdocumentos de renuncia\b.*/, /.*\barchivos de renuncia\b.*/]
         };
 
         if (intentions.register.some(regex => regex.test(normalizedInput))) return 1;
         if (intentions.allEmployees.some(regex => regex.test(normalizedInput))) return 2;
-        if (intentions.activeEmployees.some(regex => regex.test(normalizedInput))) {
-            console.log('Matched: activeEmployees');
-            return 3;
-        }
-        if (intentions.inactiveEmployees.some(regex => regex.test(normalizedInput))) {
-            console.log('Matched: inactiveEmployees');
-            return 4;
-        }
+        if (intentions.activeEmployees.some(regex => regex.test(normalizedInput))) return 3;
+        if (intentions.inactiveEmployees.some(regex => regex.test(normalizedInput))) return 4;
         if (intentions.help.some(regex => regex.test(normalizedInput))) return 5;
         if (intentions.termination.some(regex => regex.test(normalizedInput))) return 6;
         if (intentions.allLetters.some(regex => regex.test(normalizedInput))) return 7;
